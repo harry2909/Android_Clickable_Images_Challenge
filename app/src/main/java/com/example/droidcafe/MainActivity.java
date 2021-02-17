@@ -1,19 +1,19 @@
 package com.example.droidcafe;
 
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-
-import android.view.Menu;
-import android.view.MenuItem;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +52,38 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Method to display message on click.
+     *
+     * @param message the message to be shown.
+     */
+    public void displayToast(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Get string of donut order message.
+     * @param view handles the draw events.
+     */
+    public void showDonutOrder(View view) {
+        displayToast(getString(R.string.donut_order_message));
+    }
+
+    /**
+     * Get string of ice cream order message.
+     * @param view handles the draw events.
+     */
+    public void showIceCreamOrder(View view) {
+        displayToast(getString(R.string.ice_cream_order_message));
+    }
+
+    /**
+     * Get string of froyo order message.
+     * @param view handles the draw events.
+     */
+    public void showFroyoOrder(View view) {
+        displayToast(getString(R.string.froyo_order_message));
     }
 }
